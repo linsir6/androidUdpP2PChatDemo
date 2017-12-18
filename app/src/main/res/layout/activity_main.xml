@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c2c2c2"
+    android:orientation="vertical"
+    android:padding="16dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/app_lvjian_rbtn_normal_background"
+        android:orientation="vertical"
+        android:padding="8dp" >
+
+        <ListView
+            android:id="@+id/lv_chat_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#0000"
+            android:dividerHeight="8dp"
+            android:scrollbars="none" >
+        </ListView>
+    </LinearLayout>
+   
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/et_chat_message"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:background="@drawable/app_lvjian_rbtn_normal_background"
+            android:gravity="center|left"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/btn_chat_message_send"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="64dp"
+            android:layout_marginLeft="8dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="4dp"
+            android:background="#42a5f5"
+            android:textColor="#FFF"
+            android:text="发送"
+            />
+    </LinearLayout>
+
+</LinearLayout>

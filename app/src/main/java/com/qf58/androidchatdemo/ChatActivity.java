@@ -1,6 +1,11 @@
 package com.qf58.androidchatdemo;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -27,6 +32,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChatActivity extends Activity {
+
+    private InternetDynamicBroadCastReceiver mReceiver;
+
     private ChatAdapter chatAdapter;
     /**
      * 声明ListView
@@ -206,7 +214,22 @@ public class ChatActivity extends Activity {
             }
         }).start();
 
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        mReceiver = new InternetDynamicBroadCastReceiver();
+        this.registerReceiver(new InternetDynamicBroadCastReceiver(), filter);
+
 
     }
+
+    public class InternetDynamicBroadCastReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Toast.makeText(ChatActivity.this,"网络发生了变化",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
 
 }

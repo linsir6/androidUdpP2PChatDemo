@@ -15,6 +15,7 @@
         android:padding="8dp"
         android:text="把那些贩毒的关到小黑屋，枪毙五十次，快去" />
 
+
     <ImageView
         android:id="@+id/iv_chat_imagr_right"
         android:layout_width="24dp"

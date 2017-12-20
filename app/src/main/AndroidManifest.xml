@@ -32,10 +32,17 @@
 
         <activity android:name=".TestActivity">
 
-
-
         </activity>
 
+        <activity android:name=".FriendList" />
+        <activity android:name=".WebViewActivity"/>
+
+        <receiver android:name=".ChatActivity$InternetDynamicBroadCastReceiver">
+            <intent-filter>
+                <!--<action android:name="ConnectivityManager.CONNECTIVITY_ACTION"/>//这样写是不对的-->
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

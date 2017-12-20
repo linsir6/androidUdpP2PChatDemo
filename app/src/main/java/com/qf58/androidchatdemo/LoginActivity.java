@@ -91,9 +91,10 @@ public class LoginActivity extends AppCompatActivity {
                     SPUtils.getInstance().put("username", phone.getText().toString());
                     SPUtils.getInstance().put("pwd", pwd.getText().toString());
 
-                    Intent intent = new Intent(LoginActivity.this, ChatActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, FriendList.class);
                     intent.putExtra("phone", phone.getText().toString());
                     startActivity(intent);
+                    finish();
                 } else {
                     ToastUtils.showShort("用户名或密码错误");
                 }
